@@ -2,12 +2,12 @@ import 'package:dictionary/db/data_base_helper.dart';
 import 'package:dictionary/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
-// Future<void> main() async {
-//   await DataBaseHelper.instance.init();
-//   runApp(MyApp());
-// }
+import 'data_controller.dart';
+
 void main() {
   runApp(const MyApp());
+  DataController dataController = DataController();
+  dataController.converter();
 }
 
 class MyApp extends StatelessWidget {

@@ -22,6 +22,7 @@ class SQLHelper {
     final data = {
       'wordName': wordName,
       'wordDescription': wordDescription,
+      'edition': DateTime.now().add(const Duration(hours: 3)).toString(),
       // 'edition': DateTime.now(),
     };
     final id = await db.insert('Word', data,
@@ -45,7 +46,7 @@ class SQLHelper {
     final data = {
       'wordName': wordName,
       'wordDescription': wordDescription,
-      'edition': DateTime.now().toString(),
+      'edition': DateTime.now().add(const Duration(hours: 3)).toString(),
     };
     final result =
         await db.update('Word', data, where: "id = ?", whereArgs: [id]);
